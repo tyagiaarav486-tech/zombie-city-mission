@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zombie City Mission</title>
+</head>
+<body style="text-align:center; font-family:sans-serif;">
+  <h1>Zombie City Mission 🧟</h1>
+  <p>Click the button to attack zombie!</p>
+  
+  <button onclick="attack()">Attack Zombie</button>
+  <p id="result"></p>
+
+  <script>
+    function attack() {
+      let damage = Math.floor(Math.random() * 10) + 1;
+      document.getElementById("result").innerText = "You hit zombie for " + damage + " damage!";
+    }
+  </script>
+</body>
+</html>
