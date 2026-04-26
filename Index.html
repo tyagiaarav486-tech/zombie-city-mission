@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zombie City Mission</title>
+</head>
+<body style="text-align:center; font-family:sans-serif; background:black; color:white;">
+
+<h1>🧟 Zombie City Mission</h1>
+
+<p>Zombie Health: <span id="z">100</span></p>
+<p>Your Health: <span id="p">100</span></p>
+
+<button onclick="attack()">Attack</button>
+<button onclick="heal()">Heal</button>
+
+<p id="msg"></p>
+
+<script>
+let z = 100;
+let p = 100;
+
+function attack(){
+  let d1 = Math.floor(Math.random()*20)+5;
+  let d2 = Math.floor(Math.random()*15)+3;
+
+  z -= d1;
+  p -= d2;
+
+  document.getElementById("z").innerText = z;
+  document.getElementById("p").innerText = p;
+
+  if(z<=0){
+    msg.innerText="🎉 You Win!";
+  } else if(p<=0){
+    msg.innerText="💀 You Lose!";
+  } else {
+    msg.innerText="You hit "+d1+" | Zombie hit "+d2;
+  }
+}
+
+function heal(){
+  let h = Math.floor(Math.random()*15)+5;
+  p += h;
+  document.getElementById("p").innerText = p;
+  msg.innerText="❤️ Heal "+h;
+}
+</script>
+
+</body>
+</html>
